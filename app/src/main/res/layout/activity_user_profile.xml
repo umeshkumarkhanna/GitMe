@@ -1,3 +1,5 @@
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -9,14 +11,13 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userImage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="93dp"
-        android:layout_marginBottom="25dp"
-        />
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:padding="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,18 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/userName"
-        android:layout_alignBottom="@+id/userImage"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/userLocation"
         android:layout_below="@+id/userImage"
-        android:layout_toRightOf="@+id/userImage"
-        android:layout_toEndOf="@+id/userImage" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,8 +36,22 @@
         android:text="Medium Text"
         android:id="@+id/userEmail"
         android:layout_below="@+id/userLocation"
-        android:layout_toRightOf="@+id/userImage"
-        android:layout_toEndOf="@+id/userImage" />
+        android:textColor="@color/primary_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/userLocation"
+        android:layout_below="@+id/userName"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_text"/>
+
+
+
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,8 +60,9 @@
         android:text="Followers"
         android:id="@+id/textView4"
         android:layout_below="@+id/userEmail"
-        android:layout_toRightOf="@+id/userImage"
-        android:layout_toEndOf="@+id/userImage" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/primary_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,9 +70,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Following"
         android:id="@+id/textView5"
-        android:layout_alignBottom="@+id/textView4"
+        android:layout_below="@+id/userEmail"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/primary_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -75,7 +83,8 @@
         android:id="@+id/userFollowers"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/primary_text"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,6 +94,8 @@
         android:id="@+id/userFollowing"
         android:layout_below="@+id/textView5"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/primary_text"/>
+
 
 </RelativeLayout>

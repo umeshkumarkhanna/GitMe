@@ -1,5 +1,6 @@
 package ca.umeshkhanna.gitme;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class UserProfileActivity extends AppCompatActivity {
+public class UserProfileActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
