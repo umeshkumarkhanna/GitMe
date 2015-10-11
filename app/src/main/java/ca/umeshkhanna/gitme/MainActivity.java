@@ -27,10 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userName = userNameField.getText().toString();
                 Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
-               // Intent intent = new Intent(this, UserProfileActivity.class);
-               // EditText editText = (EditText) findViewById(R.id.edit_message);
-                //String message = editText.getText().toString();
-                //intent.putExtra(EXTRA_MESSAGE, message);
+                intent.putExtra("userName", userName);
                 startActivity(intent);
             }
         });
