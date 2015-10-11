@@ -11,6 +11,19 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        Bundle userBundle = getIntent().getExtras();
+        String name = userBundle.getString("name");
+        String email = userBundle.getString("email");
+        String avatar_url = userBundle.getString("avatar_url");
+        String location = userBundle.getString("location");
+        int followers = userBundle.getInt("followers");
+        int following = userBundle.getInt("following");
+  
+
+
+
+
     }
 
     @Override
