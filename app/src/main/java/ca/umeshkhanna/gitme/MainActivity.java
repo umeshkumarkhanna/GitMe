@@ -1,6 +1,7 @@
 package ca.umeshkhanna.gitme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,17 +19,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText userNameField = (EditText)findViewById(R.id.userNameField);
+        final EditText userNameField = (EditText)findViewById(R.id.userNameField);
         Button searchUserButton = (Button)findViewById(R.id.searchUserButton);
+
         searchUserButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = getApplicationContext();
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                String userName = userNameField.getText().toString();
+                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+               // Intent intent = new Intent(this, UserProfileActivity.class);
+               // EditText editText = (EditText) findViewById(R.id.edit_message);
+                //String message = editText.getText().toString();
+                //intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
             }
         });
     }
