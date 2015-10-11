@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -16,6 +17,11 @@ public class UserProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         ImageView userImage = (ImageView)findViewById(R.id.userImage);
+        TextView userName = (TextView)findViewById(R.id.userName);
+        TextView userLocation = (TextView)findViewById(R.id.userLocation);
+        TextView userEmail = (TextView)findViewById(R.id.userEmail);
+        TextView userFollowers = (TextView)findViewById(R.id.userFollowers);
+        TextView userFollowing = (TextView)findViewById(R.id.userFollowing);
 
         Bundle userBundle = getIntent().getExtras();
         String name = userBundle.getString("name");
@@ -26,6 +32,11 @@ public class UserProfileActivity extends AppCompatActivity {
         int following = userBundle.getInt("following");
 
         Picasso.with(this).load(avatar_url).into(userImage);
+        userName.setText(name);
+        userEmail.setText(email);
+        userLocation.setText(location);
+        userFollowers.setText(Integer.toString(followers));
+        userFollowing.setText(Integer.toString(following));
 
 
 
