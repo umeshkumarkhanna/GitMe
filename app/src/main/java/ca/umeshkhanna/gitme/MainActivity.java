@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 userBundle.putInt("followers", user.getFollowers());
                 userBundle.putInt("following", user.getFollowing());
 
-                Context context = getApplicationContext();
-                Toast.makeText(context, user.getEmail(), Toast.LENGTH_SHORT).show();
+
 
                 Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
                 intent.putExtras(userBundle);
