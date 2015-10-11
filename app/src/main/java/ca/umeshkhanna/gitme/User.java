@@ -12,6 +12,7 @@ public class User {
     private String location;
     private int followers;
     private int following;
+    private String html_url;
 
     public String getName() {
         return name;
@@ -35,6 +36,10 @@ public class User {
 
     public int getFollowing() {
         return following;
+    }
+
+    public String getHtml_url() {
+        return html_url;
     }
 }
 

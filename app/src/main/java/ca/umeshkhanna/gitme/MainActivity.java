@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
                 userBundle.putString("location", user.getLocation());
                 userBundle.putInt("followers", user.getFollowers());
                 userBundle.putInt("following", user.getFollowing());
-
+                userBundle.putString("html_url", user.getHtml_url());
 
 
                 Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
