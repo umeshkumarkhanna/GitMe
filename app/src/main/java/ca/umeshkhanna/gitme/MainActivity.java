@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,15 +30,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String userName = userNameField.getText().toString();
-                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
-                intent.putExtra("userName", userName);
-                startActivity(intent);
+                searchForUser(userName);
+//                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+//                intent.putExtra("userName", userName);
+//                startActivity(intent);
             }
         });
     }
 
     private void searchForUser (String userName){
+        GithubApi.getInstance().getUser(userName, new Callback<User>() {
+            @Override
+            public void success(User user, Response response) {
+                Context context = getApplicationContext();
+                CharSequence text = user.getEmail();
+                int duration = Toast.LENGTH_SHORT;
 
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
     }
 
     @Override
