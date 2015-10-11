@@ -30,22 +30,18 @@ public class GithubApi {
             RestAdapter restAdapter = new RestAdapter.Builder()
                     .setLogLevel(RestAdapter.LogLevel.FULL)
                     .setClient(new OkClient(new OkHttpClient()))
+                    .setRequestInterceptor(new RequestInterceptor() {
+                        @Override
+                        public void intercept(RequestFacade request) {
+                            request.addHeader(ACCEPT_HEADER_NAME, ACCEPT_HEADER_VALUE);
+                        }
+                    })
+                    .setEndpoint(BASE_URL)
+                    .build();
 
-
-            .setRequestInterceptor(new RequestInterceptor() {
-                @Override
-                public void intercept(RequestFacade request) {
-                    request.addHeader(ACCEPT_HEADER_NAME, ACCEPT_HEADER_VALUE);
-                }
-                );
-
-                .setEndpoint(BASE_URL)
-
-                .build();
-
-                gitHubService=restAdapter.create(GitHubService.class);
-            }
-            return gitHubService;
+            gitHubService = restAdapter.create(GitHubService.class);
+        }
+        return gitHubService;
     }
 
     interface GitHubService {
