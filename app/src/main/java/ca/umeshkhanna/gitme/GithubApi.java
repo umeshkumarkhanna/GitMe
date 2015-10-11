@@ -11,4 +11,11 @@ public class GithubApi {
         @GET("/users/{user}")
         void getUser(@Path("user") String username, Callback<User> callback);
     }
+
+    private static GithubService githubService = null;
+
+    private GithubApi(){
+        
+    }
+
 }
