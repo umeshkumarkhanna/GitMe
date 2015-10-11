@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void searchForUser (String userName){
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
