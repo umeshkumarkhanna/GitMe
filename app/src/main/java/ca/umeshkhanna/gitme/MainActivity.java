@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText userNameField = (EditText)findViewById(R.id.userNameField);
-        Button searchUserButton = (Button)findViewById(R.id.searchUserButton);
+        final Button searchUserButton = (Button)findViewById(R.id.searchUserButton);
 
         searchUserButton.setOnClickListener(new Button.OnClickListener() {
             @Override
