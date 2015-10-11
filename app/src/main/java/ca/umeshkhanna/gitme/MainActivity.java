@@ -42,17 +42,23 @@ public class MainActivity extends AppCompatActivity {
         GithubApi.getInstance().getUser(userName, new Callback<User>() {
             @Override
             public void success(User user, Response response) {
-                Context context = getApplicationContext();
-                CharSequence text = user.getEmail();
-                int duration = Toast.LENGTH_SHORT;
+                Bundle userBundle = new Bundle();
+                userBundle.putString("name", user.getName());
+                userBundle.putString("email", user.getEmail());
+                userBundle.putString("avatar_url", user.getAvatar_url());
+                userBundle.putString("location", user.getLocation());
+                userBundle.putInt("followers", user.getFollowers());
+                userBundle.putInt("following", user.getFollowing());
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Context context = getApplicationContext();
+                Toast.makeText(context, user.getEmail(), Toast.LENGTH_SHORT).show();
+                System.out.println(user.getName());
             }
 
             @Override
             public void failure(RetrofitError error) {
-
+                Context context = getApplicationContext();
+                Toast.makeText(context, "User Not Found", Toast.LENGTH_SHORT).show();
             }
         });
     }
