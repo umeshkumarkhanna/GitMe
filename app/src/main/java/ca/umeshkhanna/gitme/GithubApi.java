@@ -9,11 +9,12 @@ import retrofit.http.Path;
 /**
  * Created by umeshkhanna on 15-10-11.
  */
+
 public class GithubApi {
-    interface GitHubService{
-        @GET("/users/{user}")
-        void getUser(@Path("user") String username, Callback<User> callback);
-    }
+
+    private static final String BASE_URL = "https://api.github.com";
+    private static final String ACCEPT_HEADER_NAME = "Accept";
+    private static final String ACCEPT_HEADER_VALUE = "application/vnd.github.v3+json";
 
     private static GitHubService gitHubService = null;
 
@@ -22,9 +23,7 @@ public class GithubApi {
     }
 
 
-    private static final String BASE_URL = "https://api.github.com";
-    private static final String ACCEPT_HEADER_NAME = "Accept";
-    private static final String ACCEPT_HEADER_VALUE = "application/vnd.github.v3+json";
+
 
     public static GitHubService getInstance() {
         if (gitHubService == null) {
@@ -41,5 +40,11 @@ public class GithubApi {
         }
         return gitHubService;
     }
+
+    interface GitHubService{
+        @GET("/users/{user}")
+        void getUser(@Path("user") String username, Callback<User> callback);
+    }
+
 
 }
