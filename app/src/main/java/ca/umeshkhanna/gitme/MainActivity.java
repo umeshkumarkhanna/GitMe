@@ -31,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String userName = userNameField.getText().toString();
                 searchForUser(userName);
-//                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
-//                intent.putExtra("userName", userName);
-//                startActivity(intent);
+
             }
         });
     }
@@ -52,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Context context = getApplicationContext();
                 Toast.makeText(context, user.getEmail(), Toast.LENGTH_SHORT).show();
-                System.out.println(user.getName());
+
+                Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+                intent.putExtras(userBundle);
+                startActivity(intent);
             }
 
             @Override
